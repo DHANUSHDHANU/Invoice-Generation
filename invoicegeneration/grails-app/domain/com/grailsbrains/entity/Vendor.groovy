@@ -5,16 +5,20 @@ import com.grailsbrains.auth.User
 class Vendor extends ClientVendorDetail {
 
     String cin
+    Date dob
+    byte[] logo
     String website
-    Invoice invoice
+    User user
 
-    static belongsTo = [user:User]
-    static hasMany = [address:Address]
+
 
     static constraints = {
+        cin(nullable:true, blank:true)
         lastName(nullable:true, blank:true)
-        logo(nullable:true, blank:true)
+        logo(nullable:true, maxSize:1073741824)
         website(nullable:true, blank:true)
         phoneNumber(nullable:true, blank:true)
+        dob(nullable: true, blank:false)
+        user(nullable: true,blank:false)
     }
 }

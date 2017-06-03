@@ -8,6 +8,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class InvoiceController {
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -15,14 +17,29 @@ class InvoiceController {
         respond Invoice.list(params), model:[invoiceCount: Invoice.count()]
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
     def showtemplate(){
         render view: 'template'
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
     def showinvoice(){
-        render view: 'invoice'
+        def user = springSecurityService.currentUser
+        println("inside invoice controller " + user.organizationName)
+        render view: 'invoice',model:[user:user]
+    }
+
+    /*@Secured('ROLE_ADMIN')
+    def list(){
+        def invoice = Invoice.list()
+        [invoice : invoice]
+        render view: 'invoicelist'
+    }*/
+
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
+    def invoicelist(){
+        def invoices = Invoice.list()
+        render(view:"invoicelist", model:[invoices:invoices])
     }
 
     def show(Invoice invoice) {

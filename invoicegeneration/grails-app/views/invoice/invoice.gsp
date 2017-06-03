@@ -1,83 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <asset:stylesheet src="style.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <title>Homepage</title>
-</head>
-<body class=" bg_dash">
-<div class="container-fluid">
-    <div class="row.content">
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 sidenav" height="1em">
-            <div>
-
-            </div>
-            <div panel-color>
-                <div class="panel-group">
-                    <div class="panel panel-custom">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="">USERNAME</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-group">
-                    <div class="panel panel-custom">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse1">DASHBOARD</a>
-                            </h4>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                            <ul class="list-group">
-                                <g:link><li class="list-group-item">Profile</li></g:link>
-                                <g:link><li class="list-group-item">Sign Out</li></g:link>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-group">
-                    <div class="panel panel-custom">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse2">INVOICE</a>
-                            </h4>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse">
-                            <ul class="list-group">
-                                <g:link ><li class="list-group-item">New Invoice</li></g:link>
-                                <g:link ><li class="list-group-item">Invoice List</li></g:link>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-group">
-                    <div class="panel panel-custom">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse3">RECURRING INVOICE</a>
-                            </h4>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <ul class="list-group">
-                                <g:link ><li class="list-group-item">New Invoice</li></g:link>
-                                <g:link ><li class="list-group-item">Invoice List</li></g:link>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+<g:render template="/common/sidebar" />
             <div class="invoice-layout">
                 <div class="col-sm-4">
                     <h1>New Invoice</h1>
@@ -118,7 +39,7 @@
                                                <br><br>
                                                 <div class="form-group">
                                                     <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                                                        <input type="password" class="form-control" name="description" id="description" placeholder="Summary (e.g. project name, description of invoice)">
+                                                        <input type="text" class="form-control" name="description" id="description" placeholder="Summary (e.g. project name, description of invoice)">
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,13 +47,13 @@
                                             <div class="row text-right">
                                                 <div class="form-group">
                                                     <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                                                        <c:out>Organization Name</c:out>
+                                                        <p>${user.organizationName}</p>
                                                     </div>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
                                                     <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                                                        <c:out>Country</c:out>
+                                                        <p>Country</p>
                                                     </div>
                                                 </div>
                                                 <br>
@@ -288,10 +209,11 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                                                <g:textArea rows="6" cols="140" class="note-text" name="notes" id="notes" placeholder="Enter notes here"></g:textArea>
+                                                <g:textArea rows="6" cols="120" class="note-text" name="notes" id="notes" placeholder="Enter notes here"></g:textArea>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
                                 </div>
                             </div>
                         </div>

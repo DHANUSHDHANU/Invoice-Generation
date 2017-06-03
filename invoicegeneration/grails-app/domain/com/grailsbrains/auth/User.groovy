@@ -1,5 +1,6 @@
 package com.grailsbrains.auth
 
+import com.grailsbrains.entity.ClientVendorDetail
 import com.grailsbrains.entity.Vendor
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
@@ -20,7 +21,7 @@ class User implements Serializable {
     boolean passwordExpired
     String organizationName
     String workingArea
-    Vendor vendor
+
 
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
@@ -31,7 +32,7 @@ class User implements Serializable {
         username nullable: false, blank: false, unique: true
         organizationName nullable: true,blank:false
         workingArea nullable: true, blank: false
-        vendor nullable: true, blank: false
+
     }
 
     static mapping = {

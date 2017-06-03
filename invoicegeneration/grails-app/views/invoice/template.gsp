@@ -13,7 +13,7 @@
 <body style="background-color: #f0f2f2">
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 text-center">
-        <h1>Logo</h1>
+        <g:img dir="images" file="" width="40" height="40"/>
         <h2>Create the Perfect Invoice to Match your Brand</h2>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">

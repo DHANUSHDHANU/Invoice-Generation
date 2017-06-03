@@ -19,9 +19,10 @@ class UserController {
     }
 
 
-    def register(User newUser){
-        println"IIIIIIIIIIIIIIIIIIIII"+newUser
-        userService.createUser(newUser)
+    def register(){
+        def user = new User(params)
+        user.save(flush: true, failOnError: true)
+        new UserRole(user: user, role: Role.findByAuthority('ROLE_USER')).save(flush: true, failOnError: true)
         redirect url: '/'
     }
 

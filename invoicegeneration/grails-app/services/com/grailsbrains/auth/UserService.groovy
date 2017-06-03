@@ -1,7 +1,7 @@
 package com.grailsbrains.auth
 
 import grails.transaction.Transactional
-import org.grails.web.util.WebUtils
+
 
 @Transactional
 class UserService {

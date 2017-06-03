@@ -10,11 +10,15 @@ class Invoice {
     Date invoiceDate
     Date dueDate
     String description
+    String status
+    Vendor vendor
+    Client client
 
-    static hasOne = [vendor:Vendor, client:Client]
+
     static hasMany = [items:Item]
 
     static constraints = {
         description(nullable: true)
+        status(nullable: true)
     }
 }

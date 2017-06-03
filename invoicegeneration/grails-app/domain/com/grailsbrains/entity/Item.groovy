@@ -8,11 +8,13 @@ class Item {
     int price
     int amount
     int subTotal
-    String Description
+    String description
+    static belongsTo = Invoice
+    static hasMany = [invoice:Invoice]
 
     static constraints = {
         amount(nullable:true, blank:true)
         subTotal(nullable:true, blank:true)
-        Description(nullable:true, blank:true)
+        description(nullable:true, blank:true)
     }
 }

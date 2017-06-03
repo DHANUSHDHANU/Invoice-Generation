@@ -1,5 +1,7 @@
 package com.grailsbrains.entity
 
+import com.grailsbrains.auth.User
+
 class ClientVendorDetail {
     long id
     String firstName
@@ -9,7 +11,7 @@ class ClientVendorDetail {
     String mobileNumber
     Integer fax
 
-    static constraints = {
+    static mapping = {
         tablePerHierarchy false
     }
 }

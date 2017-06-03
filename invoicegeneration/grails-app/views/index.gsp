@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <asset:stylesheet src="style.css"/>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Homepage</title>
+    <title>GrailsBrains</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Invoice Generation</a>
+            <a class="navbar-brand" href="#">Grails Brains</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
