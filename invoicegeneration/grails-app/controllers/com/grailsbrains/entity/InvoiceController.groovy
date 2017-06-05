@@ -25,8 +25,11 @@ class InvoiceController {
     @Secured(['ROLE_ADMIN','ROLE_USER'])
     def showinvoice(){
         def user = springSecurityService.currentUser
+        def vendor = Vendor.findByUser(user)
+        println("vendor " + vendor)
+        println(vendor.getAddresses().country)
         println("inside invoice controller " + user.organizationName)
-        render view: 'invoice',model:[user:user]
+        render view: 'invoice',model:[user:user, vendor:vendor]
     }
 
     /*@Secured('ROLE_ADMIN')

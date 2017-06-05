@@ -53,7 +53,7 @@
                                                 <br>
                                                 <div class="form-group">
                                                     <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                                                        <p>Country</p>
+                                                        <p>${vendor.addresses.get(1).country}</p>
                                                     </div>
                                                 </div>
                                                 <br>

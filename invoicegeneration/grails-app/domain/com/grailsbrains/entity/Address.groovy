@@ -11,8 +11,6 @@ class Address {
     String country
     String description
 
-    static hasMany = [vendor:Vendor, client:Client]
-
     static constraints = {
         landMark(nullable:true, blank:true)
         description(nullable:true, blank:true)

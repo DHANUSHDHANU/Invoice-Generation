@@ -9,7 +9,7 @@ class SecureController {
     @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index() {
         println("user name is : " + session.getAttribute('oraganizationName'))
-        println("current user name is"   +  springSecurityService.currentUser?.organizationName)
+        println("current user name is "   +  springSecurityService.currentUser?.organizationName)
         def user = springSecurityService.currentUser
         render view:"dashboard", model:[user:user]
     }

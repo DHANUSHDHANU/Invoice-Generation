@@ -10,6 +10,7 @@ class Vendor extends ClientVendorDetail {
     String website
     User user
 
+    static hasMany = [addresses:Address]
 
 
     static constraints = {
